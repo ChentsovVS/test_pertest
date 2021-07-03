@@ -1,7 +1,3 @@
-stage: 
-  test
-install:
-  - ps: Install-Module Pester -Force -Scope CurrentUser
-build: off
-test_script:
-  - ps: Invoke-Pester -EnableExit
+test:
+  script: Invoke-Pester -EnableExit
+  stage: test
