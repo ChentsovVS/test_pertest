@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Perform a Pester test from the Get-Planet.Tests.ps1 file
+        uses: actions/checkout@v2
+      - name: Testing steps 
         shell: pwsh
         run: |
-          Invoke-Pester -EnableExit
+          Invoke-Pester Get-Planet.Tests.ps1 -Passthru
