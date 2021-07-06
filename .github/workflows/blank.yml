@@ -1,13 +1,27 @@
+# Даем свободное имя тесту 
 name: Test PowerShell on Ubuntu
 on: push
 
+# Настраиваем работу. 
 jobs:
   pester-test:
+  
+  # Даем имя job'у 
     name: Pester test
+    
+    # Запускаем образ убунту в контейнере для проверки кода внутри него 
     runs-on: ubuntu-latest
+    
+    # Формируем шаги теста 
     steps:
+    
+    # Даем имя тесту 
       - name: Perform a Pester test from the Get-Planet.Tests.ps1 file
+        
+        # Инициализируем каталог репозитория для работы с файлами внутри него 
         uses: actions/checkout@v2
+      
+        # Запускаем сам тест
       - name: Testing steps 
         shell: pwsh
         run: |
